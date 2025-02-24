@@ -8,9 +8,6 @@ void main() async {
   // Initialize Widgets Binding
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Background Service
-  // await initService();
-
   // Initialize Environment Variables
   await dotenv.load();
 

@@ -35,10 +35,10 @@ class SignupController extends GetxController {
   //* Signup Variables
   final firstName = TextEditingController();
   final lastName = TextEditingController();
-  final username = TextEditingController();
-  final email = TextEditingController();
+  final fatherName = TextEditingController();
+  final motherName = TextEditingController();
   RxString phoneNumber = ''.obs;
-  final role = 'Customer'.obs;
+  RxString fatherPhoneNumber = ''.obs;
   final password = TextEditingController();
   final passwordConfirmation = TextEditingController();
   GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
@@ -59,10 +59,10 @@ class SignupController extends GetxController {
       final userData = {
         'first_name': firstName.text.trim(),
         'last_name': lastName.text.trim(),
-        'username': username.text.trim(),
-        'email': email.text.trim(),
+        'father_name': fatherName.text.trim(),
+        'mother_name': motherName.text.trim(),
         'phone': phoneNumber.value,
-        'role': role.value,
+        'father_phone': fatherPhoneNumber.value,
         'password': password.text.trim(),
         'password_confirmation': passwordConfirmation.text.trim()
       };
@@ -77,6 +77,9 @@ class SignupController extends GetxController {
 
       // Return To Login Page
       Get.back();
+
+      AppLoaders.successSnackBar(
+          title: 'Success', message: 'Sign up done successfully');
     } catch (e) {
       await AppDialogs.hideDialog();
       AppLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());

@@ -97,7 +97,7 @@ class AppLocale implements Translations {
               'Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!',
 
           // Home
-          'homeAppbarTitle': 'Good day for shopping',
+          'homeAppbarTitle': 'Good day for studying',
           'searchStores': 'Search for Stores ..',
           'searchProducts': 'Search for Products ..',
           'popularStores': 'Popular Stores',
@@ -247,7 +247,7 @@ class AppLocale implements Translations {
               'مرحبًا بك في وجهة التسوق المثالية: تم إنشاء حسابك، استمتع بالتسوق عبر الإنترنت بكل سهولة!',
 
           // Home
-          'homeAppbarTitle': 'يوم رائع للتسوق',
+          'homeAppbarTitle': 'يوم رائع للدراسة',
           'searchStores': 'ابحث عن متجر ..',
           'searchProducts': 'ابحث عن منتج ..',
           'popularStores': 'المتاجر الشائعة',

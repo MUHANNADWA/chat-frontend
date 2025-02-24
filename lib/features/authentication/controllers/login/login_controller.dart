@@ -69,16 +69,16 @@ class LoginController extends GetxController {
       User user;
       // Login User
       if (dotenv.env['ENV']?.trim() != 'development') {
-        // final response = await AuthService.login(userData);
+        final response = await AuthService.login(userData);
 
-        // user = User.fromJson(response['data']['user']);
-        user = User.fromJson(AppHelper.exampleUser.toJson());
+        user = User.fromJson(response['user']);
+        // user = User.fromJson(AppHelper.exampleUser.toJson());
 
         await GetStorage().write('user', user.toJson());
 
         // Store User Status
-        // await GetStorage().write('token', response['data']['token']);
-        await GetStorage().write('token', '12|Qvjk8sdvnioDSVniklnsvda2dvsk');
+        await GetStorage().write('token', response['token']);
+        // await GetStorage().write('token', '12|Qvjk8sdvnioDSVniklnsvda2dvsk');
       }
 
       AppHelper.hideKeyboard();

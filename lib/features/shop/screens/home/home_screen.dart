@@ -24,12 +24,13 @@ class HomeScreen extends StatelessWidget {
 
           // Choose
           GridLayout(
+            crossAxisCount: 1,
+            mainAxisExtent: 150,
             itemCount: 4,
             itemBuilder: (context, index) => RoundedContainer(
+              margin: EdgeInsets.all(AppSizes.md),
               // backgroundColor: AppColors.darkerGrey,
               showBorder: true,
-              height: 20,
-              width: 50,
               child: Center(child: Text('data')),
             ),
           )

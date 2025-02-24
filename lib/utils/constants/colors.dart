@@ -3,7 +3,7 @@ import '/utils/helpers/helper_functions.dart';
 
 class AppColors {
   // App theme colors
-  static const Color primary = Color(0xFF951DA5);
+  static const Color primary = Color(0xFF4C65FD);
   static const Color secondary = Color.fromARGB(255, 224, 167, 247);
   static const Color accent = Color(0xFFb0c7ff);
 

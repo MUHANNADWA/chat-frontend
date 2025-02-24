@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:chatbotstudy/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:chatbotstudy/features/authentication/controllers/signup/signup_controller.dart';
-import 'package:chatbotstudy/utils/constants/colors.dart';
 import 'package:chatbotstudy/utils/validator/validator.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:chatbotstudy/common/widgets/login_signup/international_phone_number_input_field.dart';
 import 'package:chatbotstudy/utils/constants/sizes.dart';
 import 'package:chatbotstudy/utils/constants/text_strings.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 class SignupForm extends StatelessWidget {
   const SignupForm({super.key});
@@ -56,28 +55,28 @@ class SignupForm extends StatelessWidget {
 
           const SizedBox(height: AppSizes.spaceBtwInputFields),
 
-          // Username
+          // Father Name
           TextFormField(
-            controller: controller.username,
+            controller: controller.fatherName,
             autovalidateMode: AutovalidateMode.onUserInteraction,
             validator: (value) =>
-                AppValidator.validateEmptyText(AppTexts.username, value),
+                AppValidator.validateEmptyText('Father Name', value),
             decoration: InputDecoration(
-              labelText: AppTexts.username,
-              prefixIcon: const Icon(Iconsax.user_edit),
+              labelText: 'Father Name',
+              prefixIcon: const Icon(Iconsax.user),
             ),
           ),
-
           const SizedBox(height: AppSizes.spaceBtwInputFields),
 
-          // Email
+          // Mother Name
           TextFormField(
-            controller: controller.email,
+            controller: controller.motherName,
             autovalidateMode: AutovalidateMode.onUserInteraction,
-            validator: (value) => AppValidator.validateEmail(value),
+            validator: (value) =>
+                AppValidator.validateEmptyText('Mother Name', value),
             decoration: InputDecoration(
-              labelText: AppTexts.email,
-              prefixIcon: const Icon(Iconsax.direct),
+              labelText: 'Mother Name',
+              prefixIcon: const Icon(Iconsax.user),
             ),
           ),
 
@@ -88,42 +87,12 @@ class SignupForm extends StatelessWidget {
 
           const SizedBox(height: AppSizes.spaceBtwInputFields),
 
-          // Role
-          RoundedContainer(
-            borderColor: AppColors.darkGrey,
-            showBorder: true,
-            child: ListTile(
-              leading: Icon(Iconsax.user_tag),
-              iconColor: AppColors.darkGrey,
-              title: Text('Role'),
-              trailing: Obx(
-                () => DropdownButton<String>(
-                  value: controller.role.value,
-                  items: [
-                    DropdownMenuItem(
-                      value: 'Customer',
-                      child: Text('Customer'),
-                    ),
-                    DropdownMenuItem(
-                      value: 'Owner',
-                      child: Text('Owner'),
-                    ),
-                  ],
-                  onChanged: (String? value) => controller.role.value = value!,
-                ),
-              ),
-            ),
+          // Father Phone Number
+          InternationalPhoneNumberInputField<SignupController>(
+            labelText: 'Father Number',
+            onInputChanged: (PhoneNumber number) =>
+                controller.fatherPhoneNumber.value = number.phoneNumber ?? '',
           ),
-
-          // TextFormField(
-          //   controller: controller.role,
-          //   autovalidateMode: AutovalidateMode.onUserInteraction,
-          //   validator: (value) => AppValidator.validateEmptyText('Role', value),
-          //   decoration: InputDecoration(
-          //     labelText: AppTexts.email,
-          //     prefixIcon: const Icon(Iconsax.user_tag),
-          //   ),
-          // ),
 
           const SizedBox(height: AppSizes.spaceBtwInputFields),
 

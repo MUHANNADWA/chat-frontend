@@ -11,7 +11,11 @@ import 'package:chatbotstudy/utils/helpers/helper_functions.dart';
 
 class InternationalPhoneNumberInputField<T extends GetxController>
     extends StatelessWidget {
-  const InternationalPhoneNumberInputField({super.key});
+  const InternationalPhoneNumberInputField(
+      {super.key, this.labelText, this.onInputChanged});
+
+  final String? labelText;
+  final void Function(PhoneNumber)? onInputChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,7 @@ class InternationalPhoneNumberInputField<T extends GetxController>
         autoValidateMode: AutovalidateMode.onUserInteraction,
         validator: (value) => AppValidator.validatePhoneNumber(value),
         inputDecoration: InputDecoration(
-          labelText: AppTexts.phoneNo,
+          labelText: labelText ?? AppTexts.phoneNo,
           prefixIcon: const Icon(Iconsax.call),
         ),
         searchBoxDecoration: InputDecoration(
@@ -36,15 +40,16 @@ class InternationalPhoneNumberInputField<T extends GetxController>
           selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
           useBottomSheetSafeArea: true,
         ),
-        onInputChanged: (PhoneNumber number) {
-          if (tController is LoginController) {
-            (tController as LoginController).phoneNumber.value =
-                number.phoneNumber ?? '';
-          } else if (tController is SignupController) {
-            (tController as SignupController).phoneNumber.value =
-                number.phoneNumber ?? '';
-          }
-        },
+        onInputChanged: onInputChanged ??
+            (PhoneNumber number) {
+              if (tController is LoginController) {
+                (tController as LoginController).phoneNumber.value =
+                    number.phoneNumber ?? '';
+              } else if (tController is SignupController) {
+                (tController as SignupController).phoneNumber.value =
+                    number.phoneNumber ?? '';
+              }
+            },
       ),
     );
   }

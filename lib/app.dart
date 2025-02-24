@@ -37,7 +37,7 @@ class App extends StatelessWidget {
       initialBinding: GeneralBindings(),
       locale: AppLocaleController.instance.initialLang,
       translations: AppLocale(),
-      initialRoute: chatScreen,
+      initialRoute: mainScreen,
       unknownRoute: GetPage(name: notFound, page: () => NotFoundScreen()),
       getPages: [
         GetPage(
