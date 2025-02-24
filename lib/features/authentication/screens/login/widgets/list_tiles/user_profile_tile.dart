@@ -35,7 +35,7 @@ class UserProfileTile extends StatelessWidget {
 
       // User Email
       title: Text(
-        user.email,
+        user.firstName,
         style: Theme.of(context)
             .textTheme
             .bodySmall!

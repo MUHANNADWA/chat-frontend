@@ -53,11 +53,11 @@ class ProfileScreen extends StatelessWidget {
 
             ProfileMenu(title: 'Name', value: user.fullName),
 
-            ProfileMenu(title: 'Username', value: user.username),
+            ProfileMenu(title: 'Username', value: user.fullName),
 
             ProfileMenu(title: 'User ID', value: user.id.toString()),
 
-            ProfileMenu(title: 'E-mail', value: user.email),
+            ProfileMenu(title: 'E-mail', value: user.fatherName),
 
             ProfileMenu(title: 'Phone Number', value: user.phone),
 

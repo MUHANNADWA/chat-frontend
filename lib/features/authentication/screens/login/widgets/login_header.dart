@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:chatbotstudy/utils/constants/image_strings.dart';
 import 'package:chatbotstudy/utils/constants/sizes.dart';
 import 'package:chatbotstudy/utils/constants/text_strings.dart';
+import 'package:iconsax/iconsax.dart';
 
 class LoginHeader extends StatelessWidget {
   const LoginHeader({super.key});
@@ -10,11 +10,12 @@ class LoginHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         // Logo
-        Image.asset(
-          AppImages.appLogo,
-          height: 100,
+        Icon(
+          Iconsax.chart,
+          size: 100,
         ),
 
         const SizedBox(height: AppSizes.spaceBtwSections),
@@ -25,13 +26,15 @@ class LoginHeader extends StatelessWidget {
           style: Theme.of(context).textTheme.headlineMedium,
         ),
 
-        const SizedBox(height: AppSizes.sm),
+        const SizedBox(height: AppSizes.md),
 
         // SubTitle
         Text(
           AppTexts.loginSubTitle,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
+
+        const SizedBox(height: AppSizes.md),
       ],
     );
   }

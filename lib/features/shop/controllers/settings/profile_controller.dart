@@ -32,8 +32,8 @@ class ProfileController extends GetxController {
   final lastName =
       TextEditingController(text: AuthService.currentUser.lastName);
   final username =
-      TextEditingController(text: AuthService.currentUser.username);
-  final email = TextEditingController(text: AuthService.currentUser.email);
+      TextEditingController(text: AuthService.currentUser.fullName);
+  final email = TextEditingController(text: AuthService.currentUser.fatherName);
   final phone = TextEditingController(text: AuthService.currentUser.phone);
   final password = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();

@@ -1,55 +1,53 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:chatbotstudy/utils/constants/image_strings.dart';
 
 class User {
   final int id;
   final String firstName;
   final String lastName;
-  final String username;
-  final String email;
+  final String fatherName;
+  final String motherName;
   final String phone;
-  final String role;
+  final String fatherPhone;
   String image;
-  int storeId;
 
   User({
+    required this.fatherName,
+    required this.motherName,
+    required this.fatherPhone,
     required this.id,
     required this.firstName,
     required this.lastName,
-    required this.username,
-    required this.email,
     required this.phone,
-    required this.role,
     required this.image,
-    required this.storeId,
   });
 
   factory User.fromJson(jsonData) => User(
         id: jsonData['id'],
         firstName: jsonData['first_name'],
         lastName: jsonData['last_name'],
-        username: jsonData['username'],
-        email: jsonData['email'],
         phone: jsonData['phone'],
-        role: jsonData['role'],
         image: jsonData['icon_url'] ?? AppImages.user,
-        storeId: jsonData['store_id'] ?? -1,
+        fatherName: jsonData['father_name'],
+        motherName: jsonData['mother_name'],
+        fatherPhone: jsonData['father_phone'],
       );
 
   toJson() => {
         'id': id,
         'first_name': firstName,
         'last_name': lastName,
-        'username': username,
-        'email': email,
         'phone': phone,
-        'role': role,
         'icon_url': image,
-        'store_id': storeId,
+        'father_name': fatherName,
+        'mother_name': motherName,
+        'father_phone': fatherPhone,
       };
 
   String get fullName => '$firstName $lastName';
 
   @override
-  String toString() =>
-      'User(id: $id, firstName: $firstName, lastName: $lastName, username: $username, email: $email, phone: $phone, role: $role, icon_url: $image, storeId: $storeId)';
+  String toString() {
+    return 'User(id: $id, firstName: $firstName, lastName: $lastName, fatherName: $fatherName, motherName: $motherName, phone: $phone, fatherPhone: $fatherPhone, image: $image)';
+  }
 }

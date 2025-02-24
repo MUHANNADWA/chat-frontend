@@ -6,7 +6,6 @@ import 'package:chatbotstudy/common/widgets/products/product_card/favourite_butt
 import 'package:chatbotstudy/common/widgets/texts/product_price_text.dart';
 import 'package:chatbotstudy/common/widgets/texts/product_title_text.dart';
 import 'package:chatbotstudy/features/authentication/services/auth_service.dart';
-import 'package:chatbotstudy/features/shop/screens/product/product_details_screen.dart';
 import 'package:chatbotstudy/features/shop/controllers/cart/cart_controller.dart';
 import 'package:chatbotstudy/features/shop/models/product_model.dart';
 import 'package:chatbotstudy/utils/constants/colors.dart';
@@ -23,7 +22,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.to(() => ProductDetailsScreen(product: product)),
+      // onTap: () => Get.to(() => ProductDetailsScreen(product: product)),
       child: Container(
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
@@ -116,7 +115,8 @@ class ProductCard extends StatelessWidget {
                             width: AppSizes.iconLg * 1.2,
                             height: AppSizes.iconLg * 1.2,
                             child: Center(
-                              child: AuthService.currentUser.role == 'Owner'
+                              child: AuthService.currentUser.fatherName ==
+                                      'Owner'
                                   ? Text(
                                       product.id.toString(),
                                       style: TextStyle(color: AppColors.white),

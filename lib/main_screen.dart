@@ -1,13 +1,12 @@
 import 'dart:developer';
 
+import 'package:chatbotstudy/features/shop/screens/address/addresses_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:chatbotstudy/features/authentication/screens/login/widgets/list_tiles/user_profile_tile.dart';
 import 'package:chatbotstudy/features/authentication/services/auth_service.dart';
 import 'package:chatbotstudy/features/shop/controllers/cart/cart_controller.dart';
-import 'package:chatbotstudy/features/owner/screens/dashboard/dashboard_screen.dart';
 import 'package:chatbotstudy/features/shop/screens/settings/settings_screen.dart';
 import 'package:chatbotstudy/features/shop/screens/wishlist/wishlist_screen.dart';
-import 'package:chatbotstudy/features/shop/screens/store/stores_screen.dart';
 import 'package:chatbotstudy/utils/constants/text_strings.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -46,12 +45,12 @@ class MainScreen extends StatelessWidget {
                     label: AppTexts.home,
                   ),
                   NavigationDestination(
-                    icon: Icon(Iconsax.shop),
-                    selectedIcon:
-                        Icon(Iconsax.shop5, color: AppColors.darkLightInvert),
-                    label: AppTexts.stores,
+                    icon: Icon(Iconsax.chart),
+                    selectedIcon: Icon(Iconsax.chart_square5,
+                        color: AppColors.darkLightInvert),
+                    label: 'Chat',
                   ),
-                  AuthService.currentUser.role == 'Owner'
+                  AuthService.currentUser.fatherName == 'Owner'
                       ? NavigationDestination(
                           icon: Icon(Iconsax.activity),
                           selectedIcon: Icon(Iconsax.activity5,
@@ -106,7 +105,7 @@ class MainScreen extends StatelessWidget {
                         icon: Icon(Iconsax.shop),
                         label: Text(AppTexts.stores),
                       ),
-                      AuthService.currentUser.role == 'Owner'
+                      AuthService.currentUser.fatherName == 'Owner'
                           ? NavigationRailDestination(
                               icon: Icon(Iconsax.activity),
                               label: Text(AppTexts.dashboard),
@@ -140,10 +139,8 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeScreen(),
-    const StoreScreen(),
-    AuthService.currentUser.role == 'Owner'
-        ? const OwnerDashboardScreen()
-        : const WishlistScreen(),
+    const ChatScreen(),
+    const WishlistScreen(),
     const SettingsScreen(),
   ];
 }

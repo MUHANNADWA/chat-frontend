@@ -15,7 +15,7 @@ class FavouriteButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(WishlistController());
 
-    return AuthService.currentUser.role != 'Owner'
+    return AuthService.currentUser.fatherName != 'Owner'
         ? Obx(
             () => CircularIcon(
               icon: controller.isFavourite(productId)

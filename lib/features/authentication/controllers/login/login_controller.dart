@@ -11,7 +11,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:iconsax/iconsax.dart';
 
-enum LoginScreen { phoneNumber, username, email }
+enum LoginScreen { phoneNumber, facebook, google }
 
 class LoginController extends GetxController {
   static LoginController get instance => Get.find();
@@ -57,12 +57,7 @@ class LoginController extends GetxController {
       );
 
       final userData = {
-        if (currentScreen.value == LoginScreen.username)
-          'username': username.text.trim(),
-        if (currentScreen.value == LoginScreen.email)
-          'email': email.text.trim(),
-        if (currentScreen.value == LoginScreen.phoneNumber)
-          'phone': phoneNumber.value,
+        'phone': phoneNumber.value,
         'password': password.text.trim()
       };
 

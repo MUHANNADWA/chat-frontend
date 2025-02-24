@@ -116,9 +116,11 @@ class _MessageInput extends StatelessWidget {
             ),
           ),
           IconButton(
-            icon: controller.textController.text.isEmpty
-                ? const Icon(Iconsax.voice_cricle)
-                : const Icon(Iconsax.send_1),
+            icon:
+                // controller.textController.text.isEmpty
+                //     ? const Icon(Iconsax.voice_cricle)
+                //     :
+                const Icon(Iconsax.send_1),
             onPressed: controller.sendMessage,
           ),
         ],

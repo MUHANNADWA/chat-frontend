@@ -15,12 +15,11 @@ class AppHelper {
         id: Random().nextInt(1000),
         firstName: 'John',
         lastName: 'Doe',
-        username: 'johndoe',
-        email: 'GKd3K@example.com',
         phone: '1234567890',
-        role: 'Customer',
         image: AppImages.user,
-        storeId: -1,
+        fatherName: 'father',
+        motherName: 'mother',
+        fatherPhone: '6413248646',
       );
 
   static Site get exampleSite => Site.fromJson({
