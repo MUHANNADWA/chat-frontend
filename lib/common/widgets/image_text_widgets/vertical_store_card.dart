@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:chatbotstudy/features/shop/models/store_model.dart';
 import 'package:flutter/material.dart';
 import 'package:chatbotstudy/utils/constants/colors.dart';
 import 'package:chatbotstudy/utils/constants/sizes.dart';
@@ -69,4 +68,13 @@ class VerticalStoreCard extends StatelessWidget {
       ),
     );
   }
+}
+
+//TODO: delete this Temp store
+class Store {
+  final String id;
+  final String name;
+  final String image;
+
+  Store({required this.id, required this.name, required this.image});
 }

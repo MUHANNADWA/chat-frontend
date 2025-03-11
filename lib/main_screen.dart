@@ -1,10 +1,9 @@
 import 'dart:developer';
 
-import 'package:chatbotstudy/features/shop/screens/address/addresses_screen.dart';
+import 'package:chatbotstudy/features/shop/screens/address/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:chatbotstudy/features/authentication/screens/login/widgets/list_tiles/user_profile_tile.dart';
 import 'package:chatbotstudy/features/authentication/services/auth_service.dart';
-import 'package:chatbotstudy/features/shop/controllers/cart/cart_controller.dart';
 import 'package:chatbotstudy/features/shop/screens/settings/settings_screen.dart';
 import 'package:chatbotstudy/features/shop/screens/wishlist/wishlist_screen.dart';
 import 'package:chatbotstudy/utils/constants/text_strings.dart';
@@ -20,7 +19,6 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
-    CartController.instance.initCart();
     log('current user = ${AuthService.currentUser}');
 
     return Scaffold(

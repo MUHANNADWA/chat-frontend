@@ -1,4 +1,4 @@
-import 'package:chatbotstudy/features/shop/screens/address/addresses_screen.dart';
+import 'package:chatbotstudy/features/shop/screens/address/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:chatbotstudy/bindings/general_bindings.dart';
 import 'package:chatbotstudy/common/pages/not_found_page.dart';
@@ -9,7 +9,6 @@ import 'package:chatbotstudy/features/shop/screens/profile/profile_screen.dart';
 import 'package:chatbotstudy/features/authentication/screens/signup/signup_screen.dart';
 import 'package:chatbotstudy/features/authentication/services/auth_middleware.dart';
 import 'package:chatbotstudy/features/shop/screens/home/home_screen.dart';
-import 'package:chatbotstudy/features/shop/screens/order/orders_screen.dart';
 import 'package:chatbotstudy/features/shop/screens/settings/settings_screen.dart';
 import 'package:chatbotstudy/main_screen.dart';
 import 'package:chatbotstudy/utils/constants/pages.dart';
@@ -56,7 +55,6 @@ class App extends StatelessWidget {
         GetPage(name: homeScreen, page: () => HomeScreen()),
         GetPage(name: settingsScreen, page: () => SettingsScreen()),
         GetPage(name: profileScreen, page: () => ProfileScreen()),
-        GetPage(name: ordersScreen, page: () => OrdersScreen()),
         GetPage(name: chatScreen, page: () => ChatScreen()),
       ],
     );

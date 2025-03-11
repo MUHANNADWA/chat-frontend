@@ -1,14 +1,12 @@
-import 'package:chatbotstudy/features/shop/screens/address/addresses_screen.dart';
+import 'package:chatbotstudy/features/shop/screens/address/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:chatbotstudy/common/widgets/app_bar/app_app_bar.dart';
 import 'package:chatbotstudy/common/widgets/custom_shapes/containers/primary_header_container.dart';
-import 'package:chatbotstudy/common/widgets/products/cart/cart_badge.dart';
 import 'package:chatbotstudy/common/widgets/texts/section_heading.dart';
 import 'package:chatbotstudy/features/authentication/screens/login/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:chatbotstudy/features/authentication/screens/login/widgets/list_tiles/user_profile_tile.dart';
 import 'package:chatbotstudy/features/shop/controllers/settings/profile_controller.dart';
 import 'package:chatbotstudy/features/shop/controllers/settings/settings_controller.dart';
-import 'package:chatbotstudy/features/shop/screens/cart/cart_screen.dart';
 import 'package:chatbotstudy/utils/constants/colors.dart';
 import 'package:chatbotstudy/utils/constants/pages.dart';
 import 'package:chatbotstudy/utils/constants/sizes.dart';
@@ -73,17 +71,10 @@ class SettingsScreen extends StatelessWidget {
 
                   // My Cart
                   SettingsMenuTile(
-                    leadingWidget: CartBadge(
-                      alignment: Alignment(1, -1),
-                      child: Icon(
-                        Iconsax.shopping_cart,
-                        size: 28,
-                        color: AppColors.primary,
-                      ),
-                    ),
+                    icon: Iconsax.safe_home,
                     title: AppTexts.cart,
                     subTitle: AppTexts.cartSub,
-                    onTap: () => Get.to(() => const CartScreen()),
+                    onTap: () {},
                   ),
 
                   // My Orders

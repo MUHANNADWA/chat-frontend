@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
   # Utility Packages
   http: ^1.2.1
   intl: ^0.20.0
@@ -56,14 +57,10 @@ dependencies:
   get_storage: ^2.1.1
 
   # Product Specific
-  readmore: ^3.0.0
-  flutter_rating_bar: ^4.0.1
-  capped_progress_indicator: ^0.0.2
   shimmer: ^3.0.0
   custom_refresh_indicator: ^4.0.1
   image_picker: ^1.1.2
   path: ^1.9.0
-  universal_html: ^2.2.4
   flutter_background_service: ^5.1.0
   permission_handler: ^11.3.1
   flutter_local_notifications: ^18.0.1

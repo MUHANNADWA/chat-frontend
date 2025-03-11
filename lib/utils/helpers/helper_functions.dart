@@ -1,9 +1,6 @@
 import 'dart:math';
 
 import 'package:chatbotstudy/features/authentication/models/user_model.dart';
-import 'package:chatbotstudy/features/shop/models/product_model.dart';
-import 'package:chatbotstudy/features/shop/models/site_model.dart';
-import 'package:chatbotstudy/features/shop/models/store_model.dart';
 import 'package:flutter/services.dart';
 import '/utils/constants/image_strings.dart';
 import 'package:get/get.dart';
@@ -21,48 +18,6 @@ class AppHelper {
         motherName: 'mother',
         fatherPhone: '6413248646',
       );
-
-  static Site get exampleSite => Site.fromJson({
-        'id': Random().nextInt(1000),
-        'name': 'Site Name',
-        'address': 'Address, Street, Home',
-      });
-
-  static Store get exampleStore => Store.fromJson({
-        'id': Random().nextInt(1000),
-        'translations': {
-          'en': {
-            'name': 'Loading ..',
-            'description': 'Loading ..',
-          },
-          'ar': {
-            'name': 'جاري التحميل ..',
-            'description': 'جاري التحميل ..',
-          },
-        },
-        'site': exampleSite,
-        'icon_url': AppImages.appLogo,
-        'tags': ['good', 'potato', 'margin'],
-      });
-
-  static Product get exampleProduct => Product.fromJson({
-        'id': Random().nextInt(1000),
-        'translations': {
-          'en': {
-            'name': 'Loading ..',
-            'description': 'Loading ..',
-          },
-          'ar': {
-            'name': 'جاري التحميل ..',
-            'description': 'جاري التحميل ..',
-          },
-        },
-        'price': Random().nextInt(1000).toString(),
-        'icon_url': AppImages.appLogo,
-        'tags': ['good', 'product', 'padding'],
-        'store_id': exampleStore.id,
-        'stock': Random().nextInt(10),
-      });
 
   static void setFullScreen(bool enable) {
     SystemChrome.setEnabledSystemUIMode(
